@@ -1,11 +1,6 @@
-
-/**
-* 使用此文件来定义自定义函数和图形块。
-* 想了解更详细的信息，请前往 https://makecode.microbit.org/blocks/custom
-*/
-
 /**
  * mqlib blocks
+ * https://www.zhetao.com/fontarray.html
  */
 
 //% weight=100 color=#5c2d91 icon=""
@@ -17,21 +12,19 @@ namespace mqlib {
      */
     //% subcategory="tft"
     //% group='tft彩屏'
-    //% block='tft显示中文'
+    //% block=''
     export function tftShowCh(): void {
         
     }
 
-
     // 假设你有一个 TFT 画点函数
     // 这里给一个通用接口，你可以对接真实硬件或 Canvas
-    interface TFT {
-        drawPoint(x: number, y: number, color: number): void;
-    }
+    // interface TFT {
+    //     drawPoint(x: number, y: number, color: number): void;
+    // }
 
     // 在 (x,y) 显示 16×16 汉字
     export function lcdShowCN16(
-        // tft: TFT,
         x: number,
         y: number,
         ch: string,
@@ -56,22 +49,18 @@ namespace mqlib {
             }
         }
     }
-    mqlib.lcdShowCN16(1, 1, '中')
 
     // 显示字符串（多汉字）
-    // export function lcdShowStrCN16(
-    //     tft: TFT,
-    //     x: number,
-    //     y: number,
-    //     str: string,
-    //     color: number,
-    //     bgColor: number
-    // ) {
-    //     let cx = x;
-    //     for (const ch of str) {
-    //         lcdShowCN16(tft, cx, y, ch, color, bgColor);
-    //         cx += 16;
-    //     }
-    // }
+    export function lcdShowStrCN16(
+        x: number,
+        y: number,
+        str: string
+    ) {
+        let cx = x;
+        for (const ch of str) {
+            lcdShowCN16(cx, y, ch);
+            cx += 16;
+        }
+    }
 
 }
