@@ -56,6 +56,7 @@ namespace mqlib {
             }
         }
     }
+    mqlib.lcdShowCN16(1, 1, '中')
 
     // 显示字符串（多汉字）
     // export function lcdShowStrCN16(
