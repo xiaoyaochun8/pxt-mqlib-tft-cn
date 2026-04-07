@@ -47,7 +47,7 @@ namespace mqlib {
      */
     //% subcategory="tft"
     //% group='tft彩屏'
-    //% block
+    //% block="tft彩屏显示中文 $str 在位置x: $x, y: $y"
     export function tftShowCN(
         x: number,
         y: number,
