@@ -16,14 +16,14 @@ namespace mqlib {
     /**
      * 在 (x,y) 显示 16×16 汉字
      */
-    export function lcdShowCN16(
+    function showCN16Tft(
         x: number,
         y: number,
         ch: string,
         // color: number,
         // bgColor: number
     ) {
-        const c = findCN16(ch);
+        const c = findCN16Tft(ch);
         if (!c) return;
 
         for (let i = 0; i < 16; i++) {       // 行 0~15
@@ -57,7 +57,7 @@ namespace mqlib {
     ) {
         let cx = x;
         for (const ch of str) {
-            lcdShowCN16(cx, y, ch);
+            showCN16Tft(cx, y, ch);
             cx += 16;
         }
     }

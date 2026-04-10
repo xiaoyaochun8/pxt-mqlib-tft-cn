@@ -1,12 +1,12 @@
 namespace mqlib{
     // 16x16 汉字点阵结构
-    export interface CN16Char {
+    export interface CN16TftChar {
         str: string;       // 汉字
         dot: number[];   // 32 字节点阵
     }
 
     // 只包含：中、文
-    export const CN16: CN16Char[] = [
+    export const CN16Tft: CN16TftChar[] = [
         {
             str: "中",
             dot: [
@@ -52,8 +52,8 @@ namespace mqlib{
     ];
 
     // 查找汉字
-    export function findCN16(ch: string): CN16Char | null {
-        let result = CN16.find(item => item.str === ch)
+    export function findCN16Tft(ch: string): CN16TftChar | null {
+        let result = CN16Tft.find(item => item.str === ch)
         if(result){
             return result
         }else{
