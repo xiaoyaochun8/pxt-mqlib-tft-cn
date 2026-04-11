@@ -12,7 +12,7 @@
         "README.md",
         "main.blocks",
         "main.ts",
-        "font16.ts"
+        "font16tft.ts"
     ],
     "testFiles": [
         "test.ts"
