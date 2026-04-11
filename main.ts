@@ -48,6 +48,8 @@ namespace mqlib {
     //% subcategory="tft"
     //% group='tft-汉字库'
     //% block="tft彩屏显示中文 $str 在位置x: $x, y: $y"
+    //% x.min=0 x.max=112 x.defl=0
+    //% y.min=0 y.max=159 y.defl=0
     export function tftShowCN(
         x: number,
         y: number,
