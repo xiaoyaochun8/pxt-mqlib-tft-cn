@@ -26,6 +26,16 @@ namespace mqlib {
         const c = findCN16Tft(ch);
         if (!c) return;
 
+        // // Set position and go into data mode
+        // RBTFT18.setWindow()
+        // RBTFT18.enterDataMode()
+        // // write character to display
+        // pins.spiWrite(hiColor);
+        // pins.spiWrite(loColor);
+        // pins.spiWrite(bgHiColor);
+        // pins.spiWrite(bgLoColor);
+        // RBTFT18.exitDataMode();
+
         for (let i = 0; i < 16; i++) {       // 行 0~15
             for (let j = 0; j < 16; j++) {     // 列 0~15
                 const byteIdx = i * 2 + (j >> 3);
