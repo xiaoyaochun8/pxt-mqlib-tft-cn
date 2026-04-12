@@ -65,6 +65,9 @@ namespace mqlib {
             showCN16Tft(cx, cy, ch);
             cx += 16;
             cNum += 1;
+            if (cx >= 128) {
+                cx = 0;
+            }
         }
     }
 
