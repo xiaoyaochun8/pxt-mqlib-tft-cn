@@ -23,7 +23,7 @@ namespace mqlib {
         // color: number,
         // bgColor: number
     ) {
-        const c = findCN16Tft(ch);
+        const c = findCN16oledtft(ch);
         if (!c) return;
 
         // // Set position and go into data mode
