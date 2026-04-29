@@ -36,17 +36,32 @@ namespace mqlib {
         // pins.spiWrite(bgLoColor);
         // RBTFT18.exitDataMode();
 
+        // for (let i = 0; i < 16; i++) {       // 行 0~15
+        //     for (let j = 0; j < 16; j++) {     // 列 0~15
+        //         const byteIdx = i * 2 + (j >> 3);
+        //         const bit = 0x80 >> (j & 0x07);
+
+        //         if (c.dot[byteIdx] & bit) {
+        //             // tft.drawPoint(x + j, y + i, color);
+        //             RBTFT18.drawPixel(x + j, y + i, Color.Red)
+        //         } else {
+        //             // tft.drawPoint(x + j, y + i, bgColor);
+        //             RBTFT18.drawPixel(x + j, y + i, Color.Black)
+        //         }
+        //     }
+        // }
+        // ========== OLED 16×16 字模 专用绘制代码 ==========
         for (let i = 0; i < 16; i++) {       // 行 0~15
-            for (let j = 0; j < 16; j++) {     // 列 0~15
-                const byteIdx = i * 2 + (j >> 3);
-                const bit = 0x80 >> (j & 0x07);
+            for (let j = 0; j < 16; j++) {   // 列 0~15
+
+                // ===== OLED 字模 核心计算（已改好）=====
+                const byteIdx = j + (i >> 3) * 16;   // 计算字节索引
+                const bit = 1 << (i & 0x07);         // 计算位掩码
 
                 if (c.dot[byteIdx] & bit) {
-                    // tft.drawPoint(x + j, y + i, color);
-                    RBTFT18.drawPixel(x + j, y + i, Color.Red)
+                    RBTFT18.drawPixel(x + j, y + i, Color.Red);
                 } else {
-                    // tft.drawPoint(x + j, y + i, bgColor);
-                    RBTFT18.drawPixel(x + j, y + i, Color.Black)
+                    RBTFT18.drawPixel(x + j, y + i, Color.Black);
                 }
             }
         }
